@@ -120,4 +120,22 @@
 		    sudo apt full-upgrade -y
 		    ```
 
+	- Semple manter a indentação nos códigos para manter a formatação do `.md`, por exemplo:
+
+		Este comando que está alinhado com o `1.`, ou seja, se espaços:
+
+		1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
+
+		```bash
+		Ctrl + Alt + T
+		```
+
+		Deve ser assim, ficar à frente, ou seja, com `4` espaços:
+
+		1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
+
+			```bash
+			Ctrl + Alt + T
+			```
+
 
