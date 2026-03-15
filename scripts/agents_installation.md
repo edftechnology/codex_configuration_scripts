@@ -83,7 +83,10 @@
 		Ctrl + Alt + T
 		```
 
-	- Sempre manter essa Seção, mesmo que ela não seja útil, pois serve para a maior parte das instalações:
+	- Sempre manter essa Item `2. Certifique-se de que seu sistema esteja limpo e atualizado.`, não
+	colocar como Seção, pois ele vem como passos depois do final `1. Abra o `Terminal Emulator`. 
+	Você pode fazer isso pressionando`, mesmo que ela não seja útil, pois serve para a maior parte
+	das instalações:
 
 		2. Certifique-se de que seu sistema esteja limpo e atualizado.
 
