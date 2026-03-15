@@ -18,6 +18,13 @@
 
 	- Manter o _template_ do `README.ipynb`
 
+	- Para as referências, mantes neste padrão `ABNT` com o título entre `**` e `**`para que fique
+	en negrito, por exemplo:
+
+	```bash
+	[1] OPENAI. **Instalar o `bmon` no `linux ubuntu` pelo `terminal emulator`**. Disponível em: <https://chatgpt.com/c/69b700b3-b03c-8326-84e4-309f7e577240>. ChatGPT. Acessado em: 15/03/2026.
+	```
+
 ---
 
 ## Procedimento de Exploração
