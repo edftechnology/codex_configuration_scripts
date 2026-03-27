@@ -31,9 +31,11 @@
 ### 1. Pesquisar instruções no `ChatGPT`
 
 	- Criar uma pergunta no `ChatGPT` do tipo:  
-	  *"Como instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `Linux Ubuntu` pelo `Terminal Emulator`?"*  
+	  *"Instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `<nome_do_sistema_operacional>` pelo `terminal emulator`?"*  
 
-	- Copiar o _link+ da resposta do `ChatGPT` para incluir na seção **Referências** do arquivo `README.ipynb`.
+		- Para o `nome_do_sistema_operacional`, se for o `Linux`, usar `linux ubuntu` e se for o `Kali`, usar `kali linux`.
+
+	- Copiar o _link_ da resposta do `ChatGPT` para incluir na seção **Referências** do arquivo `README.ipynb`.
 
 ---
 
