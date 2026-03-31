@@ -66,6 +66,13 @@ latexmk -c
 - Pacotes essenciais devem ser carregados no preâmbulo principal (`main.tex` ou equivalente).
 - Evitar redefinir comandos padrão sem justificativa.
 - Todo arquivo `.tex` deve conter `\input{variables.tex}` imediatamente após `\input{preamble.tex}`.
+- Ao escrever ou editar código LaTeX, usar a indentação hierárquica já adotada no projeto:
+  aplicar tabulação para refletir a estrutura do documento, por exemplo em
+  `document`, `section`, `subsection`, `subsubsection` e ambientes como `itemize`,
+  `enumerate`, `figure` e `table`.
+- Não apenas preservar a indentação existente:
+  novos trechos gerados pelo agente também devem seguir esse padrão de recuo.
+- Não achatar a formatação nem reindentar em estilo diferente sem necessidade.
 
 
 ### Template Base de Arquivo

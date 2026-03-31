@@ -1,0 +1,120 @@
+# AGENTS.md
+
+## Purpose
+This document defines the formatting and submission requirements for papers to be included in the Proceedings of ENCIT 2026. All agents and contributors must strictly follow these guidelines.
+
+---
+
+## General Requirements
+
+- Papers must be written in **English**.
+- Maximum length: **8 pages**, including figures, tables, and references.
+- Format: **A4 size**.
+- Font: **Times New Roman, size 10** (except title, abstract, etc.).
+- Line spacing: **single**.
+- Margins:
+  - First page: top = 3 cm; others = 2 cm.
+  - Remaining pages: all margins = 2 cm.
+- Pages **must NOT be numbered**.
+- Text must be **justified**.
+- First line of each paragraph must be indented by **0.5 cm**.
+- Use **SI units** exclusively.
+
+---
+
+## Title and Author Section
+
+- Title must be in **uppercase**.
+- Include:
+  - Paper code
+  - Full title
+  - Authors and affiliations
+  - Emails
+- Abstract:
+  - ~200 words
+  - No formulas or references
+- Keywords:
+  - Up to 5 keywords
+  - Separated by commas
+
+---
+
+## Sections and Headings
+
+- Use numbered sections (Arabic numerals).
+- Maximum of **3 levels** of subsections.
+- Font: Times New Roman, bold, size 10.
+- Leave one blank line before and after each heading.
+
+---
+
+## Equations
+
+- Must be:
+  - Indented by 0.5 cm
+  - Italicized
+  - Numbered (right-aligned, in parentheses)
+- Referencing:
+  - Mid-sentence: `Eq. (1)`
+  - Beginning: `Equation (1)`
+- Define all symbols near first use.
+
+---
+
+## Figures
+
+- Place close to first reference in text.
+- Number sequentially.
+- Caption:
+  - Max 3 lines
+  - Centered
+  - Font size 10
+- Use formats:
+  - GIF (≤16 colors)
+  - JPEG (>16 colors)
+
+---
+
+## Tables
+
+- Must be centered.
+- Titles:
+  - Max 3 lines
+  - Similar font to body text
+- Use SI units.
+- Explanations go **below** the table (not inside).
+
+---
+
+## References
+
+- Must be cited in text using:
+  - Author–year format
+- Examples:
+  - (Author, 2023)
+  - Author (2023)
+- For 3+ authors: use "et al."
+- List at the end:
+  - Alphabetical order
+  - First line aligned left
+  - Remaining lines indented (0.5 cm)
+
+---
+
+## Acknowledgements
+
+- Optional section before references.
+
+---
+
+## Responsibility Notice
+
+Include at the end:
+
+> The author(s) is (are) solely responsible for the printed material included in this paper.
+
+---
+
+## Compliance
+
+All submissions that do not strictly follow these guidelines may be rejected.

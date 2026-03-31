@@ -18,8 +18,7 @@
 
 	- Manter o _template_ do `README.ipynb`
 
-	- Para as referências, mantes neste padrão `ABNT` com o título entre `**` e `**`para que fique
-	en negrito, por exemplo:
+	- Para as referências, mantes neste padrão `ABNT` com o título entre `**` e `**`para que fique en negrito e com somente a primeira letra do título em MAIÚSCULA, por exemplo:
 
 	```bash
 	[1] OPENAI. **Instalar o `bmon` no `linux ubuntu` pelo `terminal emulator`**. Disponível em: <https://chatgpt.com/c/69b700b3-b03c-8326-84e4-309f7e577240>. ChatGPT. Acessado em: 15/03/2026.
@@ -32,9 +31,11 @@
 ### 1. Pesquisar instruções no `ChatGPT`
 
 	- Criar uma pergunta no `ChatGPT` do tipo:  
-	  *"Como instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `Linux Ubuntu` pelo `Terminal Emulator`?"*  
+	  *"Instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `<nome_do_sistema_operacional>` pelo `terminal emulator`?"*  
 
-	- Copiar o _link+ da resposta do `ChatGPT` para incluir na seção **Referências** do arquivo `README.ipynb`.
+		- Para o `nome_do_sistema_operacional`, se for o `Linux`, usar `linux ubuntu` e se for o `Kali`, usar `kali linux`.
+
+	- Copiar o _link_ da resposta do `ChatGPT` para incluir na seção **Referências** do arquivo `README.ipynb`.
 
 ---
 
@@ -148,4 +149,80 @@
 			Ctrl + Alt + T
 			```
 
+	- Sempre incluir no `README.ipynb` uma seção com este título:
+
+		```bash
+		## 1.1 Código completo para configurar/instalar/usar
+		```
+
+	- Quando houver um bloco único de copiar e colar para configurar/instalar/usar o programa sem precisar digitar linha por linha, usar este formato:
+
+		```md
+		## 1.1 Código completo para configurar/instalar/usar
+
+		Para configurar/instalar/usar o `<nome_do_programa>` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
+
+		1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
+
+		    ```bash
+		    Ctrl + Alt + T
+		    ```
+
+		2. Digite o seguinte comando e pressione `Enter`:
+
+		    ```bash
+		    <comandos completos aqui>
+		    ```
+		```
+
+	- Para o caso específico do `codex`, usar como referência este modelo:
+
+		```md
+		## 1.1 Código completo para configurar/instalar/usar
+
+		Para configurar/instalar/usar o `codex` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
+
+		1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
+
+		    ```bash
+		    Ctrl + Alt + T
+		    ```
+
+		2. Digite o seguinte comando e pressione `Enter`:
+
+		    ```bash
+		    sudo apt clean
+		    sudo apt autoclean
+		    sudo apt autoremove -y
+		    sudo apt update
+		    sudo apt --fix-broken install
+		    sudo apt clean
+		    sudo apt list --upgradable
+		    sudo apt full-upgrade -y
+		    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+		    sudo apt install nodejs -y
+		    sudo npm install -g openai
+		    node -v
+		    npm -v
+		    npm install -g @openai/code --prefix ~/.npm-global # NÃO usar o `sudo`.
+		    export PATH="$HOME/.npm-global/bin:$PATH" >> ~/.bashrc
+		    export PATH="$HOME/.npm-global/bin:$PATH" >> ~/.zshrc
+		    source ~/.bashrc
+		    source ~/.zshrc
+		    codex --help
+		    which codex
+		    codex ---version
+		    codex
+		    ```
+		```
+
+	- Quando os passos do item `2` forem complexos demais para ter um bloco único de copiar e colar, registrar explicitamente que não há comando único, neste formato:
+
+		```md
+		2. Digite o seguinte comando e pressione `Enter`:
+
+		    ```bash
+		    NÃO há.
+		    ```
+		```
 
