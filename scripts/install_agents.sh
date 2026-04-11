@@ -15,7 +15,7 @@ can_prompt_for_update() {
   [ -z "${CI-}" ] && is_tty_interactive
 }
 
-prompt_yes_no_default_yes() {
+prompt_yes_no_default_no() {
   local prompt="$1"
   local answer=""
 
@@ -23,17 +23,17 @@ prompt_yes_no_default_yes() {
     return 1
   fi
 
-  printf "%s [Y/n] " "$prompt" > /dev/tty
+  printf "%s [y/N] " "$prompt" > /dev/tty
   if ! IFS= read -r answer < /dev/tty; then
-    return 0
+    return 1
   fi
 
   case "$answer" in
-    n|N|no|NO)
-      return 1
+    y|Y|yes|YES)
+      return 0
       ;;
     *)
-      return 0
+      return 1
       ;;
   esac
 }
@@ -104,7 +104,7 @@ check_and_offer_repo_update() {
     return 0
   fi
 
-  if prompt_yes_no_default_yes "[$REPO_NAME] A newer version is available. Would you like to update now?"; then
+  if prompt_yes_no_default_no "[$REPO_NAME] A newer version is available. Would you like to update now?"; then
     echo "[INFO] Atualizando '$REPO_NAME'..."
     run git pull --ff-only origin "$current_branch"
     echo "[INFO] Reiniciando o comando com a versão atualizada de '$REPO_NAME'..."
