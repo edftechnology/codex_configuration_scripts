@@ -24,6 +24,8 @@
 
 	- Nomes de programas devem sempre ser escritos entre crases, por exemplo: `Google Earth`.
 
+	- As ações dos passos a passo devem sempre usar verbos no infinitivo, por exemplo: `2. Digitar o seguinte comando e pressionar `Enter`:` em vez de `2. Digite o seguinte comando e pressione `Enter`:`.
+
 	- Para as referências, mantes neste padrão `ABNT` com o título entre `**` e `**`para que fique en negrito e com somente a primeira letra do título em MAIÚSCULA, por exemplo:
 
 	```bash
