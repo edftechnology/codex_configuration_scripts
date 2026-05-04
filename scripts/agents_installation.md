@@ -43,6 +43,26 @@
 
 	- Revisar todos os arquivos do projeto e alterar o nome do programa para **<nome_do_projeto/repo>** (sem os underlines `_`) conforme descrito na pesquisa/documentação.
 
+	- Essa revisão deve cobrir **todo o repositório**, e não apenas o `README.ipynb`, para identificar nomes antigos, exemplos herdados de outros projetos e referências residuais incorretas.
+
+	- Verificar também arquivos de metadados e documentação auxiliar da raiz do projeto, como por exemplo:
+	  
+		- `pyproject.toml`
+	  
+		- `CITATION.cff`
+	  
+		- `MANIFEST.in`
+	  
+		- `requirements.txt`
+	  
+		- `DEPENDENCIES.md`
+	  
+		- `__init__.py`
+
+	- Corrigir nomes de projeto, descrições, URLs, títulos, identificadores internos e outras referências textuais que ainda apontem para outro programa/repositório.
+
+	- Se houver ocorrências antigas apenas em arquivos de `template`, exemplos de submódulos ou materiais de apoio fora do escopo do projeto atual, registrar isso explicitamente e evitar alterar esses arquivos sem necessidade.
+
 	- Não alterar os arquivos `README.md` e `README.py` usando o código em `python` chamado `convert_ipynb_to_md.py`.
 
 	- Preservar integralmente a seção: `**"2. Certifique-se de que seu sistema esteja limpo e atualizado."**`
@@ -225,4 +245,3 @@
 		    NÃO há.
 		    ```
 		```
-
