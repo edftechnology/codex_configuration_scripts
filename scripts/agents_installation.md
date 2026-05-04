@@ -10,6 +10,8 @@
 
 	- Usar comandos portáteis e compatíveis com diferentes versões do `Linux Ubuntu`.
 
+	- Sempre tratar `Ubuntu` como `Linux Ubuntu` e `Kali` como `Kali Linux`, pois essa é a padronização adotada neste projeto.
+
 	- Verificar dependências e pacotes adicionais necessários.
 
 	- Documentar _links_ oficiais e fontes de referência.
@@ -17,6 +19,10 @@
 	- Registrar _links_ de consultas ao `ChatGPT` e outras fontes em **Referências**.
 
 	- Manter o _template_ do `README.ipynb`
+
+	- Palavras estrangeiras em relação ao português brasileiro devem ser escritas em itálico, por exemplo: `_software_`.
+
+	- Nomes de programas devem sempre ser escritos entre crases, por exemplo: `Google Earth`.
 
 	- Para as referências, mantes neste padrão `ABNT` com o título entre `**` e `**`para que fique en negrito e com somente a primeira letra do título em MAIÚSCULA, por exemplo:
 
@@ -33,7 +39,7 @@
 	- Criar uma pergunta no `ChatGPT` do tipo:  
 	  *"Instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `<nome_do_sistema_operacional>` pelo `terminal emulator`?"*  
 
-		- Para o `nome_do_sistema_operacional`, se for o `Linux`, usar `linux ubuntu` e se for o `Kali`, usar `kali linux`.
+		- Para o `nome_do_sistema_operacional`, se for o `Ubuntu`, usar sempre `linux ubuntu`; se for o `Kali`, usar sempre `kali linux`.
 
 	- Copiar o _link_ da resposta do `ChatGPT` para incluir na seção **Referências** do arquivo `README.ipynb`.
 
