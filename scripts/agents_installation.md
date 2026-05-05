@@ -26,6 +26,8 @@ O agente deve:
 
 - Palavras estrangeiras em relação ao português brasileiro devem ser escritas em itálico, por exemplo: `_software_`.
 
+- Manter o português com acentos, conforme as regras gramaticais.
+
 - Nomes de programas devem sempre ser escritos entre crases, por exemplo: `Google Earth`.
 
 - As ações dos passos a passo devem sempre usar verbos no infinitivo, por exemplo: `2. Digitar o seguinte comando e pressionar `Enter`:` em vez de `2. Digite o seguinte comando e pressione `Enter`:`.
@@ -141,7 +143,7 @@ Sempre manter essa Item `2. Certifique-se de que seu sistema esteja limpo e atua
 
 <div style="margin-left: 2em;">
 
-2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando:
+2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digitar o seguinte comando:
 
 </div>
 
@@ -151,7 +153,7 @@ sudo apt clean
 
 <div style="margin-left: 2em;">
 
-2.2 Remover pacotes `.deb` antigos ou duplicados do `cache` local. É útil para liberar espaço, pois remove apenas os pacotes que não podem mais ser baixados (ou seja, versões antigas de pacotes que foram atualizados). Digite o seguinte comando:
+2.2 Remover pacotes `.deb` antigos ou duplicados do `cache` local. É útil para liberar espaço, pois remove apenas os pacotes que não podem mais ser baixados (ou seja, versões antigas de pacotes que foram atualizados). Digitar o seguinte comando:
 
 </div>
 
@@ -161,7 +163,7 @@ sudo apt autoclean
 
 <div style="margin-left: 2em;">
 
-2.3 Remover pacotes que foram automaticamente instalados para satisfazer as dependências de outros pacotes e que não são mais necessários. Digite o seguinte comando:
+2.3 Remover pacotes que foram automaticamente instalados para satisfazer as dependências de outros pacotes e que não são mais necessários. Digitar o seguinte comando:
 
 </div>
 
@@ -171,7 +173,7 @@ sudo apt autoremove -y
 
 <div style="margin-left: 2em;">
 
-2.4 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digite o seguinte comando e pressione `Enter`:
+2.4 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digitar o seguinte comando e pressionar `Enter`:
 
 </div>
 
@@ -201,7 +203,7 @@ sudo apt clean
 
 <div style="margin-left: 2em;">
 
-2.7 Para ver a lista de pacotes a serem atualizados, digite o seguinte comando e pressione `Enter`:
+2.7 Para ver a lista de pacotes a serem atualizados, digitar o seguinte comando e pressione `Enter`:
 
 </div>
 
@@ -211,7 +213,7 @@ sudo apt list --upgradable
 
 <div style="margin-left: 2em;">
 
-2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`:
+2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digitar o seguinte comando e pressionar `Enter`:
 
 </div>
 
@@ -274,7 +276,7 @@ Para configurar/instalar/usar o `<nome_do_programa>` no `Linux Ubuntu` sem preci
     Ctrl + Alt + T
     ```
 
-2. Digite o seguinte comando e pressione `Enter`:
+2. Digitar o seguinte comando e pressionar `Enter`:
 
     ```bash
     <comandos completos aqui>
@@ -298,7 +300,7 @@ Para configurar/instalar/usar o `codex` no `Linux Ubuntu` sem precisar digitar l
     Ctrl + Alt + T
     ```
 
-2. Digite o seguinte comando e pressione `Enter`:
+2. Digitar o seguinte comando e pressionar `Enter`:
 
     ```bash
     sudo apt clean
@@ -333,7 +335,7 @@ Quando os passos do item `2` forem complexos demais para ter um bloco único de 
 </div>
 
 ```md
-2. Digite o seguinte comando e pressione `Enter`:
+2. Digitar o seguinte comando e pressionar `Enter`:
 
     ```bash
     NÃO há.

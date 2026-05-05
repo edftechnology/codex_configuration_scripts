@@ -12,11 +12,13 @@ _This document contains the main commands and settings to install/configure/use 
 
 O `agents` é um repositório para consolidar instruções específicas de cada agente no **ChatGPT Codex**. Ele serve como um índice central para guias de Git, LaTeX, Python, e outros, permitindo que cada agente seja editado e mantido de forma independente.
 
+
 ## Pré-requisitos
 
 - `Git` instalado
 - SSH key configurada no `GitHub`
 - Acesso ao `GitHub` (repositório `edftechnology/agents`)
+
 
 ## 1. Configurar/Instalar/Usar o repo `agents` no repositório do seu projeto
 
@@ -27,6 +29,8 @@ Para configurar/instalar/usar o `agents`, siga os passos abaixo:
     ```bash
     Ctrl + Alt + T
     ```
+
+
 
 2. Certifique-se de que seu sistema esteja limpo e atualizado.
 
@@ -55,7 +59,7 @@ Para configurar/instalar/usar o `agents`, siga os passos abaixo:
     sudo apt --fix-broken install
     ```
 
-    2.6 Limpar o `cache` do gerenciador de pacotes `apt novamente:
+    2.6 Limpar o `cache` do gerenciador de pacotes `apt` novamente:
     ```bash
     sudo apt clean
     ```
@@ -70,6 +74,7 @@ Para configurar/instalar/usar o `agents`, siga os passos abaixo:
     sudo apt full-upgrade -y
     ```
 
+
 3. Acessar a pasta do seu projeto:
 
     ```bash
@@ -83,6 +88,7 @@ Para configurar/instalar/usar o `agents`, siga os passos abaixo:
         git@github.com:edftechnology/agents.git \
         subs/submodules/agents
     ```
+
 
 ## 1.1 Código completo para configurar/instalar/usar
 
@@ -112,6 +118,8 @@ Para configurar/instalar/usar o `agents` no `Linux Ubuntu` sem precisar digitar 
 
     o Git exige que sua **chave `SSH` esteja configurada**.
 
+
+
 #### 2.1.1 Verificar se existe chave SSH
 
 1. Para verificar se existe chave `ssh`:
@@ -136,6 +144,7 @@ Para configurar/instalar/usar o `agents` no `Linux Ubuntu` sem precisar digitar 
 
     então a chave já existe.
 
+
 ### 2.1.2 Testar conexão com GitHub
 
 1. Para testar a conexão com o `github`:
@@ -157,6 +166,8 @@ Para configurar/instalar/usar o `agents` no `Linux Ubuntu` sem precisar digitar 
     ```
 
     Depois adicionar a chave pública no GitHub.
+
+
 
 ## 2.2 Clonar projeto sem baixar os `submodules`
 
@@ -184,6 +195,8 @@ Para configurar/instalar/usar o `agents` no `Linux Ubuntu` sem precisar digitar 
     git submodule update --init --recursive
     ```
 
+
+
 ### 2.3 `Submodule` não atualiza automaticamente
 
 Submodules **não seguem automaticamente o `commit` mais recente** do repositório remoto.
@@ -191,6 +204,8 @@ Submodules **não seguem automaticamente o `commit` mais recente** do repositór
 Ou seja:
 
 Mesmo que `agents` tenha atualização no `GitHub`, o projeto principal continua apontando para o `commit` antigo.
+
+
 
 #### 2.3.1 Atualizar um `submodule`
 
@@ -221,6 +236,7 @@ Mesmo que `agents` tenha atualização no `GitHub`, o projeto principal continua
     git commit -m "Update agents submodule"
     ```
 
+
 ### 2.4 Problema comum com `.gitmodules`
 
 1. O arquivo `.gitmodules` controla os submódulos.
@@ -239,6 +255,7 @@ Mesmo que `agents` tenha atualização no `GitHub`, o projeto principal continua
     git submodule sync
     ```
 
+
 ### 2.5 Atualizar todos os `submodules` de uma vez
 
 1. Muito útil quando o projeto tem vários `submodules` (como nos seus repositórios):
@@ -252,6 +269,7 @@ Mesmo que `agents` tenha atualização no `GitHub`, o projeto principal continua
     ```bash
     git pull --recurse-submodules
     ```
+
 
 ### 2.6 Verificar `submodules` instalados
 
@@ -267,6 +285,7 @@ Mesmo que `agents` tenha atualização no `GitHub`, o projeto principal continua
     a3f8c9c subs/submodules/agents
     ```
 
+
 ## Boa prática para projetos grandes (como os seus com subs/submodules)
 
 1. Sempre usar:
@@ -281,19 +300,40 @@ Mesmo que `agents` tenha atualização no `GitHub`, o projeto principal continua
     git submodule update --init --recursive
     ```
 
+## 4. Atualização automática do `agents`
+
+Ao executar o comando `bash scripts/install_agents.sh`, o `agents` verifica se o repositório local está atrás da branch remota atual. Quando houver atualização disponível, o comportamento será o seguinte:
+
+- Se houver `TTY` e não for um ambiente de `CI`, o script pergunta:
+
+```bash
+[agents] A newer version is available. Would you like to update now? [y/N]
+```
+
+- Se o usuário responder `y`, o script executa `git fetch origin <branch_atual>`, depois `git pull --ff-only origin <branch_atual>`, e reinicia o próprio `install_agents.sh` já com a versão nova.
+- Se o usuário responder `n` ou apenas pressionar `Enter`, o script continua normalmente sem atualizar.
+- Se não houver `TTY`, ou se estiver em `CI`, o script não pergunta e segue normalmente apenas com o aviso.
+- Se houver alterações locais ou divergência em relação ao remoto, a atualização automática é ignorada por segurança.
+
+
 ## Compatibilidade
 
 - Testado em `Linux Ubuntu` (recomendado `22.04+`).
 - Deve funcionar em `Debian` e `WSL`, desde que o `Git` e o `Bash` estejam disponíveis.
 
+
 ## Licença
 
 Este repositório inclui o arquivo `LICENSE.txt`.
+
+
 
 ## Contato e suporte
 
 Para dúvidas ou problemas, abra uma issue no repositório do `GitHub`.
 
+
 ## Referências
 
 [1] OPENAI. **Instalar o `agents` no `linux ubuntu` pelo `terminal emulator`**. Disponível em: <https://chatgpt.com/c/69ca8837-562c-83e9-b727-7025a10d4bfb>. ChatGPT. Acessado em: 02/04/2026.
+
