@@ -112,6 +112,29 @@ project/
 
 ---
 
+## README.ipynb e README.md
+- Em `README.ipynb` e `README.md`, formatar as referências em múltiplas linhas para facilitar leitura e edição.
+- Não condensar autor, título, disponibilidade, fonte e data de acesso em uma única linha.
+- Usar o padrão abaixo:
+
+```markdown
+## Referências
+
+[1] OPENAI.
+**Converter vários README.ipynb para .md e .py**. 
+Disponível em: <https://chat.openai.com/c/50f64d4d-cfe7-40ac-a8aa-27ffa4eb5a5e>.
+ChatGPT.
+Acessado em: 26/01/2024.
+
+[2] INSTITUTO TECNOLÓGICO DE AERONÁUTICA (ITA).
+**Exemplo de utilização da classe ITA**.
+Disponível em: <http://www.apgita.org.br/apgita/teses-e-latex.php>.
+ITA.
+Acessado em: 25/08/2016.
+```
+
+---
+
 ## Fluxo de Trabalho (Git)
 - Criar branch:
   ```bash
