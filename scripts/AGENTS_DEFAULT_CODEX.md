@@ -11,6 +11,14 @@ Cada agente possui seu próprio arquivo dedicado, que **não é mesclado** aqui,
 - `docs/AGENTS_latex.md` → Instruções e padrões para documentos LaTeX  
 - `docs/AGENTS_python.md` → Instruções para Python, PEP8, Sphinx e formatação de código
 
+## Padronização de CLIs entre apps
+
+- Prefira `--data-file` para o arquivo de dados principal em apps e workflows.
+- Preserve aliases legados, como `--uploaded_full_path`, quando já houver uso.
+- Use `--source-data-file`, `--source-sheet-name` e `--source-csv-separator`
+  para associar resultados processados à tabela original.
+- Evite nomes diferentes para o mesmo conceito entre programas relacionados.
+
 ---
 
 ## Como usar no ChatGPT Codex
