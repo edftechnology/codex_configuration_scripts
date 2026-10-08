@@ -5,6 +5,13 @@ Cada arquivo dedicado **não é mesclado** aqui, para permitir edição independ
 
 ---
 
+## Padrões de código Python
+
+- Aplicar a [PEP 8](https://peps.python.org/pep-0008/) a todo código Python criado ou alterado.
+- Escrever docstrings de módulos, classes e funções públicas conforme a [PEP 257](https://peps.python.org/pep-0257/).
+- Manter nomes de identificadores em inglês dos Estados Unidos, conforme a regra geral do projeto.
+- Aplicar essas PEPs somente a código Python e às docstrings Python. Elas não definem o estilo da prosa em Markdown nem de comandos de shell, arquivos JSON, código C ou outros formatos.
+
 ## Estrutura
 
 - `scripts/gemini_git.md` → Instruções e fluxos de trabalho para Git, GitHub e GitLab
