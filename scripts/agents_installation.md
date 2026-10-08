@@ -271,7 +271,7 @@ Sempre incluir no `README.ipynb` uma seção com este título:
 ## 1.1 Código completo para configurar/instalar/usar
 ```
 
-- A escrita dentro do `README.ipynb` e do `README.md` deve seguir `pep8` e `pep257`.
+- Todo código Python incluído ou alterado deve seguir a `PEP 8`; as docstrings de módulos, classes e funções públicas devem seguir a `PEP 257`. Essas convenções se aplicam ao código Python e às docstrings, não à prosa em Markdown nem a comandos de `shell`. Para o `README.ipynb` e o `README.md`, manter a estrutura do template, a indentação dos blocos de comandos e a formatação Markdown definida neste guia.
 
 <div style="margin-left: 2em;">
 
