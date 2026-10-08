@@ -44,17 +44,27 @@ O agente deve:
 
 - Quando um comando tiver a opção `-y`, ela deve sempre ficar no final do comando, por exemplo: `sudo apt install ./google-earth-pro-stable_current_amd64.deb -y`.
 
-- Para as referências, mantes neste padrão `ABNT` com o título entre `**` e `**`para que fique en negrito e com somente a primeira letra do título em MAIÚSCULA, por exemplo:
+- Para as referências, usar o padrão `ABNT`, com o título em negrito e somente a primeira letra do título em maiúscula, respeitando siglas e nomes próprios. Distribuir os elementos da referência em linhas separadas: autoria, título, disponibilidade, fonte e data de acesso.
 
-```bash
-[1] OPENAI. **Instalar o `bmon` no `linux ubuntu` pelo `terminal emulator`**. Disponível em: <https://chatgpt.com/c/69b700b3-b03c-8326-84e4-309f7e577240>. ChatGPT. Acessado em: 15/03/2026.
+```text
+[1] OPENAI.
+**Instalar o `bmon` no `linux ubuntu` pelo `terminal emulator`**.
+Disponível em: <https://chatgpt.com/c/69b700b3-b03c-8326-84e4-309f7e577240>.
+ChatGPT.
+Acessado em: 15/03/2026.
 ```
 
 ---
 
 ## Procedimento de Exploração
 
+- Se a solicitação identificar um processo em execução, aguardar a conclusão do comando indicado e depois verificar o processo por nome, PID ou linha de comando. Relatar o resultado da verificação, sem inferi-lo apenas pela saída de outro comando.
+
 ### 1. Pesquisar instruções no `ChatGPT`
+
+- Ler e consultar o link de conversa fornecido pelo solicitante antes de redigir o tutorial; usar essa conversa para confirmar o método efetivamente adotado, as dependências e a configuração final.
+
+- Distinguir a instalação do próprio programa via `apt` da instalação de dependências via `apt`. Se a conversa indicar clonagem, compilação ou configuração de inicialização automática, documentar esse fluxo sem substituir o método por `sudo apt install <nome-do-programa>`.
 
 - Criar uma pergunta no `ChatGPT` do tipo:  
   *"Instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `<nome_do_sistema_operacional>` pelo `terminal emulator`?"*  
@@ -91,7 +101,7 @@ O agente deve:
 
 - Se houver ocorrências antigas apenas em arquivos de `template`, exemplos de submódulos ou materiais de apoio fora do escopo do projeto atual, registrar isso explicitamente e evitar alterar esses arquivos sem necessidade.
 
-- Não alterar os arquivos `README.md` e `README.py` usando o código em `python` chamado `convert_ipynb_to_md.py`.
+- Editar o conteúdo do tutorial no `README.ipynb` e gerar o `README.md` pelo conversor indicado na etapa 3; não editar manualmente o arquivo Markdown gerado. O conversor atual não gera `README.py`; remover esse arquivo se existir como resíduo antigo.
 
 - Preservar integralmente a seção: `**"2. Certifique-se de que seu sistema esteja limpo e atualizado."**`
 
@@ -110,7 +120,7 @@ O agente deve:
 - Rodar o _script_ de conversão para sincronizar os arquivos:
 
 ```bash
-python3 subs/submodules/python_scripts/convert_ipynb_to_md.py
+python3 subs/submodules/python_scripts/scripts/convert_ipynb_to_md.py --depth 0
 ```
 
 <div style="margin-left: 2em;">
@@ -355,6 +365,24 @@ Quando os passos do item `2` forem complexos demais para ter um bloco único de 
     NÃO há.
     ```
 ```
+
+### 5. Sincronizar e publicar
+
+Depois de revisar as alterações e converter o notebook, sincronizar a branch `main` e enviar os arquivos:
+
+```bash
+git init
+git fetch --all
+git pull origin main
+git status --short
+git add README.ipynb README.md docs/
+git status --short
+git commit -m "updating README"
+git push -u origin HEAD:main
+```
+
+Quando a tarefa também alterar um repositório de submódulo, revisar, confirmar e enviar primeiro as alterações daquele repositório para sua branch `main`. Depois, atualizar o ponteiro do submódulo no repositório principal e enviar a branch `main` principal. Não enviar alterações locais não relacionadas junto desses commits.
+
 ## File naming policy
 
 - File names must be written in English.

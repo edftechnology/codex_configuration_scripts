@@ -19,6 +19,22 @@ Cada agente possui seu próprio arquivo dedicado, que **não é mesclado** aqui,
 - Manter nomes de identificadores em inglês dos Estados Unidos, conforme a regra geral do projeto.
 - Aplicar essas PEPs somente a código Python e às docstrings Python. Elas não definem o estilo da prosa em Markdown nem de comandos de shell, arquivos JSON, código C ou outros formatos.
 
+## Formato de referências bibliográficas
+
+- Formatar cada referência no padrão ABNT, distribuindo a entrada em linhas separadas: identificação e autoria; título em negrito; link precedido por `Disponível em:`; identificação da fonte; data de acesso.
+- Escrever somente a primeira letra do título em maiúscula, respeitando siglas e nomes próprios.
+- Não reunir os elementos da referência em uma única linha.
+
+Exemplo:
+
+```text
+[1] OPENAI.
+**Instalar o `mousetrail` no `linux ubuntu` pelo `terminal emulator`**.
+Disponível em: <https://chatgpt.com/g/g-p-6980caf949648191ad6acfcdbe590f9e-instalar/c/6ac754e0-d664-83ea-906a-50fab09b9f73>.
+ChatGPT.
+Acessado em: 08/10/2026.
+```
+
 ## Estrutura
 
 - `docs/agents_git.md` → Instruções e fluxos de trabalho para Git, GitHub e GitLab  
