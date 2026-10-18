@@ -188,3 +188,9 @@ pytest --cov=src
 - Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
 
 - Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
+
+## Desenvolvimento e validação de modelos
+
+- Registre finalidade, versão, dados de treino/avaliação, linhagem, premissas, limites e dependências. Previna vazamento entre treino e avaliação e permita reprodução de experimentos quando tecnicamente aplicável.
+- Teste entradas, implementação, resultados, estabilidade e limitações; use referências ou revisão independente proporcional ao risco. Avalie viés, robustez e explicabilidade quando pertinentes ao uso, sem inferir garantia a partir de métricas isoladas.
+- Monitore alterações de dados e desempenho, e exija revisão antes de mudar dados, método, configuração, finalidade ou população de uso.

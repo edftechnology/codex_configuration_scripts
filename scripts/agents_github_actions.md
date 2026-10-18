@@ -104,3 +104,8 @@ git commit -m "[CI] Atualiza workflows"
 - Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
 
 - Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
+
+## Controles MRM em CI/CD
+
+- Para pipelines de modelos, torne reproduzíveis e rastreáveis as verificações de dados, código, configuração, métricas e versão do artefato; guarde resultados e falhas sem expor dados confidenciais.
+- Use permissões mínimas, segredos somente por mecanismos protegidos e aprovação explícita para publicação ou implantação material. Separe validação de implantação e não trate um teste automatizado como validação independente completa.

@@ -119,3 +119,15 @@ Não afirmar que o projeto está completamente seguro apenas porque nenhuma vuln
 - Reutilizar resultados válidos de verificações anteriores quando apropriado.
 - Evitar leituras repetidas e desnecessárias.
 - Executar auditorias completas quando explicitamente solicitado ou quando houver mudanças relevantes para a segurança.
+
+## Gestão de risco de modelos (MRM)
+
+Aplique estas orientações quando o sistema usar métodos quantitativos, estatísticos, de aprendizado de máquina ou abordagens semelhantes para produzir estimativas, classificações, recomendações ou decisões. Ajuste o rigor à finalidade, materialidade, exposição, complexidade e contexto de uso; não imponha controles desnecessários a ferramentas sem risco de modelo relevante.
+
+- Registre, conforme o risco, finalidade e uso previsto, responsável, versão, dados e linhagem, premissas, limites de uso, limitações conhecidas, dependências, critérios de desempenho, revisões e aprovações.
+- Antes de uso material, avalie a adequação conceitual, os dados, a implementação e os resultados. Use testes reproduzíveis, comparações ou referências independentes quando apropriado; busque crítica objetiva por pessoa qualificada que não seja a única autora ou responsável pelo modelo.
+- Monitore desempenho, qualidade e mudanças nos dados e no contexto. Defina sinais de alerta, resposta a desvios, revisão de mudanças e critérios para limitar, recalibrar, revalidar, suspender ou retirar o modelo.
+- Comunique incerteza, premissas, limitações e restrições de uso. Não prometa precisão, imparcialidade, validação ou conformidade sem evidência; mantenha supervisão humana adequada ao impacto da decisão.
+- Preserve documentação e evidências suficientes para reproduzir e auditar decisões, testes e mudanças. Proteja dados pessoais, confidenciais e credenciais; não os inclua em logs, prompts, commits ou artefatos sem autorização e necessidade.
+- Considere interdependências, modelos de terceiros e métodos determinísticos de impacto material. Aplique controles equivalentes quando o risco justificar, mesmo que a ferramenta não seja formalmente classificada como modelo.
+- Consulte `docs/references/README.md` quando disponível, confirme a edição e a jurisdição aplicáveis e trate os materiais como orientação contextual, não como obrigação legal universal. A orientação interagências dos EUA de 2026 não abrange modelos generativos/agênticos; avalie controles adequados ao contexto. Verifique também datas de vigência antes de afirmar aplicabilidade.

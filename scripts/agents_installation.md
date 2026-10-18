@@ -389,3 +389,8 @@ Quando a tarefa também alterar um repositório de submódulo, revisar, confirma
 - Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
 
 - Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
+
+## Considerações MRM para instalação e operação
+
+- Quando a instalação configurar modelos, serviços de inferência ou pipelines analíticos, documente versões e fontes, dependências, finalidade, limites, dados necessários, validação, monitoramento, rollback e responsável, conforme o risco.
+- Diferencie instalação técnica de aprovação para uso: a instalação bem-sucedida não prova adequação, validação ou conformidade. Confirme a aplicabilidade das referências regulatórias antes de descrevê-las como requisitos.

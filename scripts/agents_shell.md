@@ -83,3 +83,8 @@ grep -E '(^[a-zA-Z0-9_]+=\$|^[[:space:]]*[a-zA-Z0-9_-]+ )' script.sh
 - Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
 
 - Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
+
+## Execução segura em fluxos de modelos
+
+- Antes de executar scripts sobre dados ou artefatos de modelos, confirme caminhos, origem, permissões, ambiente e efeitos colaterais; use modo de simulação quando disponível e preserve logs e resultados de validação.
+- Não execute código de modelo ou dependências baixados sem verificar origem e integridade. Evite incluir dados sensíveis, tokens ou saídas confidenciais em argumentos, histórico do shell e logs de CI.

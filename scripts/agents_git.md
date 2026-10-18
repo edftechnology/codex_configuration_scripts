@@ -121,3 +121,9 @@ git push origin feature/nome_funcionalidade
 - Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
 
 - Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
+
+## Rastreabilidade de modelos
+
+- Versione código, configuração, esquema de dados e documentação necessários para reproduzir validação e resultados; mantenha dados sensíveis e credenciais fora do Git.
+- Registre revisão, aprovação, limitações aceitas e mudanças de uso em artefatos apropriados. Antes de integrar alterações materiais, confira evidências de testes e validação e preserve a trilha de auditoria.
+- Não use rebase, force-push, limpeza ou restauração destrutiva para contornar divergências sem autorização explícita.
