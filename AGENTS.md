@@ -71,3 +71,48 @@ No **ChatGPT Codex** (ou outra instância), você pode pedir para o modelo consi
 - Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
 
 - Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
+
+## Segurança e auditoria de código
+
+### Diretrizes gerais
+
+- Priorizar a segurança, a integridade e a confidencialidade do código-fonte.
+- Verificar possíveis vulnerabilidades antes de concluir alterações relevantes.
+- Utilizar o plugin `codex-security` quando disponível e apropriado.
+- Nunca expor senhas, tokens, chaves de API ou outras credenciais.
+- Não executar comandos destrutivos sem autorização explícita.
+- Não modificar arquivos durante auditorias solicitadas como somente leitura.
+
+### Auditoria de segurança
+
+Quando o usuário solicitar uma auditoria de segurança, verificar:
+
+1. Vulnerabilidades no código Python e Shell Script.
+2. Exposição de senhas, tokens e chaves de API.
+3. Dependências com vulnerabilidades conhecidas.
+4. Comandos perigosos ou destrutivos.
+5. Riscos de injeção de comandos e execução arbitrária.
+6. Configurações inseguras e permissões excessivas.
+7. Possíveis problemas de segurança nos submódulos Git.
+
+### Relatório de segurança
+
+Apresentar os resultados contendo:
+
+- Severidade: crítica, alta, média, baixa ou informativa.
+- Arquivo e linha afetados.
+- Descrição da vulnerabilidade e evidências.
+- Impacto potencial.
+- Recomendação de correção.
+- Ferramentas efetivamente utilizadas.
+- Limitações da auditoria e verificações não realizadas.
+
+Não afirmar que o projeto está completamente seguro apenas porque nenhuma vulnerabilidade foi identificada.
+
+### Eficiência de tokens e contexto
+
+- Evitar auditorias completas quando a alteração for pequena e localizada.
+- Priorizar a análise dos arquivos modificados.
+- Reutilizar resultados válidos de verificações anteriores quando apropriado.
+- Evitar leituras repetidas e desnecessárias.
+- Executar auditorias completas quando explicitamente solicitado ou quando houver mudanças relevantes para a segurança.
