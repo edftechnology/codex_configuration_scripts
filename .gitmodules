@@ -22,3 +22,11 @@
 [submodule ".vscode"]
 	path = .vscode
 	url = git@github.com:edftechnology/.vscode.git
+[submodule "subs/submodules/codex_configuration_scripts"]
+	path = subs/submodules/codex_configuration_scripts
+	url = git@github.com:edftechnology/codex_configuration_scripts.git
+	branch = main
+[submodule "subs/submodules/gemini_configuration_scripts"]
+	path = subs/submodules/gemini_configuration_scripts
+	url = git@github.com:edftechnology/gemini_configuration_scripts.git
+	branch = main
