@@ -17,7 +17,8 @@ Use os rótulos por extenso, sempre em minúsculas e entre colchetes, no início
 
 ### Configuração das cores
 
-- Finalize cada linha colorida com `\033[0m` para restaurar a cor do terminal.
+- Aplique a cor à linha inteira, incluindo o rótulo e o texto da mensagem, e finalize com
+  `\033[0m` para restaurar a cor do terminal.
 - Aplique cores somente quando a saída for um terminal interativo e `NO_COLOR` não estiver definido.
 - Logs redirecionados para arquivos ou pipes devem permanecer sem códigos ANSI.
 - Utilize ANSI True Color (24 bits) para representar cores hexadecimais com precisão.
@@ -39,4 +40,5 @@ Use os rótulos por extenso, sempre em minúsculas e entre colchetes, no início
 
    **Exemplo:** `[timing] Total execution time: 2.4 s.`
 
-   No padrão atual do projeto, sua cor é ciano (`\033[36m`).
+   No padrão atual do projeto, aplique ciano à linha inteira (`\033[36m`) e restaure com
+   `\033[0m` ao final.
