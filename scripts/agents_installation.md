@@ -1,396 +1,178 @@
-# agents_installation.md
-
-## Missão do Agente
-
-<div style="margin-left: 2em;">
-
-Você é responsável por criar, modificar e manter instruções de instalação de programas no `Linux Ubuntu`, garantindo clareza, reprodutibilidade e segurança no processo.
-
-O agente deve:
-
-</div>
-
-- Criar tutoriais passo a passo de instalação via **Terminal Emulator**.
-
-- Usar comandos portáteis e compatíveis com diferentes versões do `Linux Ubuntu`.
-
-- Sempre tratar `Ubuntu` como `Linux Ubuntu` e `Kali` como `Kali Linux`, pois essa é a padronização adotada neste projeto.
-
-- Verificar dependências e pacotes adicionais necessários.
-
-- Documentar _links_ oficiais e fontes de referência.
-
-- Registrar _links_ de consultas ao `ChatGPT` e outras fontes em **Referências**.
-
-- Manter o _template_ do `README.ipynb`
-
-- Quando o projeto envolver modelos, automações analíticas, dados críticos ou contexto regulado, incluir uma seção enxuta de governança documental no `README.ipynb`, sem transformar o `README` em relatório técnico completo.
-
-- Essa seção deve cobrir, quando aplicável: objetivo e uso previsto, escopo, responsáveis, versões do ambiente tecnológico, fontes de dados, premissas, limitações, testes, monitoramento, riscos operacionais, plano de contingência e histórico de revisão.
-
-- Sempre que houver tabelas de versões em documentos técnicos do projeto, preservar esse padrão no `README.ipynb` com colunas como `Componente`, `Versão/Comando` e `Observação`.
-
-- Para projetos com modelos ou não-modelos, observar a estrutura mínima de documentação: relatório metodológico, ambiente tecnológico, fonte de dados, plano de testes, resultados/performance, estabilidade, risco operacional, manual de uso/monitoramento e códigos de extração, execução e monitoramento quando existirem.
-
-- Quando houver aprovações, revisões ou alçadas, registrar somente o necessário para rastreabilidade no `README.ipynb`; detalhes completos devem ficar em documentação específica do projeto.
-
-- Palavras estrangeiras em relação ao português brasileiro devem ser escritas em itálico, por exemplo: `_software_`.
-
-- Manter o português com acentos, conforme as regras gramaticais.
-
-- Nomes de programas devem sempre ser escritos entre crases, por exemplo: `Google Earth`.
-
-- As ações dos passos a passo devem sempre usar verbos no infinitivo, por exemplo: `2. Digitar o seguinte comando e pressionar `Enter`:` em vez de `2. Digite o seguinte comando e pressione `Enter`:`.
-
-- Quando um comando tiver a opção `-y`, ela deve sempre ficar no final do comando, por exemplo: `sudo apt install ./google-earth-pro-stable_current_amd64.deb -y`.
-
-- Para as referências, usar o padrão `ABNT`, com o título em negrito e somente a primeira letra do título em maiúscula, respeitando siglas e nomes próprios. Distribuir os elementos da referência em linhas separadas: autoria, título, disponibilidade, fonte e data de acesso.
-
-```text
-[1] OPENAI.
-**Instalar o `bmon` no `linux ubuntu` pelo `terminal emulator`**.
-Disponível em: <https://chatgpt.com/c/69b700b3-b03c-8326-84e4-309f7e577240>.
-ChatGPT.
-Acessado em: 15/03/2026.
-```
-
----
-
-## Procedimento de Exploração
-
-- Se a solicitação identificar um processo em execução, aguardar a conclusão do comando indicado e depois verificar o processo por nome, PID ou linha de comando. Relatar o resultado da verificação, sem inferi-lo apenas pela saída de outro comando.
-
-### 1. Pesquisar instruções no `ChatGPT`
-
-- Ler e consultar o link de conversa fornecido pelo solicitante antes de redigir o tutorial; usar essa conversa para confirmar o método efetivamente adotado, as dependências e a configuração final.
-
-- Distinguir a instalação do próprio programa via `apt` da instalação de dependências via `apt`. Se a conversa indicar clonagem, compilação ou configuração de inicialização automática, documentar esse fluxo sem substituir o método por `sudo apt install <nome-do-programa>`.
-
-- Criar uma pergunta no `ChatGPT` do tipo:  
-  *"Instalar o <nome_do_projeto/repositório> (sem os underlines `_`) no `<nome_do_sistema_operacional>` pelo `terminal emulator`?"*  
-
-- Para o `nome_do_sistema_operacional`, se for o `Ubuntu`, usar sempre `linux ubuntu`; se for o `Kali`, usar sempre `kali linux`.
-
-- Copiar o _link_ da resposta do `ChatGPT` para incluir na seção **Referências** do arquivo `README.ipynb`.
-
----
-
-### 2. Revisar o Projeto
-
-- As alterações, revisões e demais ajustes devem ser feitos na branch `main`.
-
-- Revisar todos os arquivos do projeto e alterar o nome do programa para **<nome_do_projeto/repo>** (sem os underlines `_`) conforme descrito na pesquisa/documentação.
-
-- Essa revisão deve cobrir **todo o repositório**, e não apenas o `README.ipynb`, para identificar nomes antigos, exemplos herdados de outros projetos e referências residuais incorretas.
-
-- Verificar também arquivos de metadados e documentação auxiliar da raiz do projeto, como por exemplo:
-
-- `pyproject.toml`
-
-- `CITATION.cff`
-
-- `MANIFEST.in`
-
-- `requirements.txt`
-
-- `DEPENDENCIES.md`
-
-- `__init__.py`
-
-- Corrigir nomes de projeto, descrições, URLs, títulos, identificadores internos e outras referências textuais que ainda apontem para outro programa/repositório.
-
-- Se houver ocorrências antigas apenas em arquivos de `template`, exemplos de submódulos ou materiais de apoio fora do escopo do projeto atual, registrar isso explicitamente e evitar alterar esses arquivos sem necessidade.
-
-- Editar o conteúdo do tutorial no `README.ipynb` e gerar o `README.md` pelo conversor indicado na etapa 3; não editar manualmente o arquivo Markdown gerado. O conversor atual não gera `README.py`; remover esse arquivo se existir como resíduo antigo.
-
-- Preservar integralmente a seção: `**"2. Certifique-se de que seu sistema esteja limpo e atualizado."**`
-
-- Revisar também os documentos-padrão do projeto:
-
-- CHANGES.txt
-
-- setup.py
-
-- Manter o português com acentos, conforme as regras gramaticais.
-
----
-
-### 3. Executar Conversão
-
-- Rodar o _script_ de conversão para sincronizar os arquivos:
-
-```bash
-python3 subs/submodules/python_scripts/scripts/convert_ipynb_to_md.py --depth 0
-```
-
-<div style="margin-left: 2em;">
-
-Caso você não encontre o arquivo `python3 convert_ipynb_to_md.py`, este converte o `README.ipynb` para `.md`. Sendo assim, se não encontrar o arquivo, faça você mesmo.
-
-Excluir o arquivo `README.py`, pois este não deve existir, caso ele exista.
-
-</div>
-
----
-
-### 4. Acertar código
-
-<div style="margin-left: 2em;">
-
-Para os repos que possuírem o `README.ipynb`, onde estiver:
-
-</div>
-
-1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
-
-<div style="margin-left: 2em;">
-
-Alterar para:
-
-</div>
-
-1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
-
-```bash
-Ctrl + Alt + T
-```
-
-<div style="margin-left: 2em;">
-
-Sempre manter essa Item `2. Certifique-se de que seu sistema esteja limpo e atualizado.`, não colocar como Seção, pois ele vem como passos depois do final `1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando`, mesmo que ela não seja útil, pois serve para a maior parte das instalações:
-
-</div>
-
-2. Certifique-se de que seu sistema esteja limpo e atualizado.
-
-<div style="margin-left: 2em;">
-
-2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digitar o seguinte comando:
-
-</div>
-
-```bash
-sudo apt clean
-```
-
-<div style="margin-left: 2em;">
-
-2.2 Remover pacotes `.deb` antigos ou duplicados do `cache` local. É útil para liberar espaço, pois remove apenas os pacotes que não podem mais ser baixados (ou seja, versões antigas de pacotes que foram atualizados). Digitar o seguinte comando:
-
-</div>
-
-```bash
-sudo apt autoclean
-```
-
-<div style="margin-left: 2em;">
-
-2.3 Remover pacotes que foram automaticamente instalados para satisfazer as dependências de outros pacotes e que não são mais necessários. Digitar o seguinte comando:
-
-</div>
-
-```bash
-sudo apt autoremove -y
-```
-
-<div style="margin-left: 2em;">
-
-2.4 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digitar o seguinte comando e pressionar `Enter`:
-
-</div>
-
-```bash
-sudo apt update
-```
-
-<div style="margin-left: 2em;">
-
-2.5 **Corrigir pacotes quebrados**: Isso atualizará a lista de pacotes disponíveis e tentará corrigir pacotes quebrados ou com dependências ausentes:
-
-</div>
-
-```bash
-sudo apt --fix-broken install
-```
-
-<div style="margin-left: 2em;">
-
-2.6 Limpar o `cache` do gerenciador de pacotes `apt` novamente:
-
-</div>
-
-```bash
-sudo apt clean
-```
-
-<div style="margin-left: 2em;">
-
-2.7 Para ver a lista de pacotes a serem atualizados, digitar o seguinte comando e pressione `Enter`:
-
-</div>
-
-```bash
-sudo apt list --upgradable
-```
-
-<div style="margin-left: 2em;">
-
-2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digitar o seguinte comando e pressionar `Enter`:
-
-</div>
-
-```bash
-sudo apt full-upgrade -y
-```
-
-<div style="margin-left: 2em;">
-
-Sempre manter a indentação nos códigos para manter a formatação do `.md`, por exemplo:
-
-Este comando que está alinhado com o `1.`, ou seja, se espaços:
-
-</div>
-
-1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
-
-```bash
-Ctrl + Alt + T
-```
-
-<div style="margin-left: 2em;">
-
-Deve ser assim, ficar à frente, ou seja, com `4` espaços:
-
-1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
-
-</div>
-
-```bash
-    ```bash
-    Ctrl + Alt + T
-    ```
-```
-
-<div style="margin-left: 2em;">
-
-Sempre incluir no `README.ipynb` uma seção com este título:
-
-</div>
-
-```bash
-## 1.1 Código completo para configurar/instalar/usar
-```
-
-- Todo código Python incluído ou alterado deve seguir a `PEP 8`; as docstrings de módulos, classes e funções públicas devem seguir a `PEP 257`. Essas convenções se aplicam ao código Python e às docstrings, não à prosa em Markdown nem a comandos de `shell`. Para o `README.ipynb` e o `README.md`, manter a estrutura do template, a indentação dos blocos de comandos e a formatação Markdown definida neste guia.
-
-<div style="margin-left: 2em;">
-
-Quando houver um bloco único de copiar e colar para configurar/instalar/usar o programa sem precisar digitar linha por linha, usar este formato:
-
-</div>
-
-```md
-## 1.1 Código completo para configurar/instalar/usar
-
-Para configurar/instalar/usar o `<nome_do_programa>` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
-
-1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
-
-    ```bash
-    Ctrl + Alt + T
-    ```
-
-2. Digitar o seguinte comando e pressionar `Enter`:
-
-    ```bash
-    <comandos completos aqui>
-    ```
-```
-
-<div style="margin-left: 2em;">
-
-Para o caso específico do `codex`, usar como referência este modelo:
-
-</div>
-
-```md
-## 1.1 Código completo para configurar/instalar/usar
-
-Para configurar/instalar/usar o `codex` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
-
-1. Abrir o `Terminal Emulator`. Você pode fazer isso pressionando:
-
-    ```bash
-    Ctrl + Alt + T
-    ```
-
-2. Digitar o seguinte comando e pressionar `Enter`:
-
-    ```bash
-    sudo apt clean
-    sudo apt autoclean
-    sudo apt autoremove -y
-    sudo apt update
-    sudo apt --fix-broken install
-    sudo apt clean
-    sudo apt list --upgradable
-    sudo apt full-upgrade -y
-    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-    sudo apt install nodejs -y
-    sudo npm install -g openai
-    node -v
-    npm -v
-    npm install -g @openai/code --prefix ~/.npm-global # NÃO usar o `sudo`.
-    export PATH="$HOME/.npm-global/bin:$PATH" >> ~/.bashrc
-    export PATH="$HOME/.npm-global/bin:$PATH" >> ~/.zshrc
-    source ~/.bashrc
-    source ~/.zshrc
-    codex --help
-    which codex
-    codex ---version
-    codex
-    ```
-```
-
-<div style="margin-left: 2em;">
-
-Quando os passos do item `2` forem complexos demais para ter um bloco único de copiar e colar, registrar explicitamente que não há comando único, neste formato:
-
-</div>
-
-```md
-2. Digitar o seguinte comando e pressionar `Enter`:
-
-    ```bash
-    NÃO há.
-    ```
-```
-
-### 5. Sincronizar e publicar
-
-Depois de revisar as alterações e converter o notebook, sincronizar a branch `main` e enviar os arquivos:
-
-```bash
-git init
-git fetch --all
-git pull origin main
-git status --short
-git add README.ipynb README.md docs/
-git status --short
-git commit -m "updating README"
-git push -u origin HEAD:main
-```
-
-Quando a tarefa também alterar um repositório de submódulo, revisar, confirmar e enviar primeiro as alterações daquele repositório para sua branch `main`. Depois, atualizar o ponteiro do submódulo no repositório principal e enviar a branch `main` principal. Não enviar alterações locais não relacionadas junto desses commits.
-
-## File naming policy
-
-- File names must be written in English.
-- Use only underscores (`_`) to separate words in file names; do not use hyphens (`-`), spaces, or other separators.
-
-- Keep mandatory ecosystem names such as `AGENTS.md`, `GEMINI.md`, and `README.md` when a tool or platform requires the conventional name.
-
-## Considerações MRM para instalação e operação
-
-- Quando a instalação configurar modelos, serviços de inferência ou pipelines analíticos, documente versões e fontes, dependências, finalidade, limites, dados necessários, validação, monitoramento, rollback e responsável, conforme o risco.
-- Diferencie instalação técnica de aprovação para uso: a instalação bem-sucedida não prova adequação, validação ou conformidade. Confirme a aplicabilidade das referências regulatórias antes de descrevê-las como requisitos.
+gents_installation.md
+
+# AGENTS.md — Instruções para documentação de instalação de aplicativos
+
+## 1. Configuração desta tarefa
+
+- **Aplicativo:** `subfinder`.
+- **Gerenciador e método de instalação:** `apt` (pacote da distribuição).
+- **Sistema operacional principal:** Kali Linux.
+- **Sistema alternativo:** Linux Ubuntu, somente quando explicitamente aplicável; não confundir procedimentos ou afirmar compatibilidade não verificada.
+- **Branch de trabalho:** `main`.
+- **Proprietário do repositório remoto:** `edftechnology`.
+- **Repositório esperado:** `edftechnology/subfinder` (privado).
+- **Conversa de referência:** <https://chatgpt.com/g/g-p-6980caf949648191ad6acfcdbe590f9e-instalar/c/6ae2c50d-c6d0-83e8-bd3a-1f4a28b560c1>.
+
+**Prioridade absoluta:** qualidade, rigor técnico e científico, reprodutibilidade, segurança e auditabilidade; não otimizar por velocidade. Nunca declarar que uma verificação foi realizada sem evidência. Não inventar comandos, links, datas de acesso ou resultados.
+
+## 2. Missão e hierarquia das fontes
+
+Criar, revisar e manter documentação em português brasileiro, com acentuação correta, para instalar, configurar, verificar, utilizar e desinstalar o aplicativo pelo terminal.
+
+1. Ler integralmente os arquivos relevantes existentes antes de editar, sobretudo `README.ipynb`, `README.md`, `CHANGES.txt`, `setup.py`, `AGENTS.md`, `LICENSE*` e arquivos de configuração.
+2. Ler a conversa de referência **se houver acesso real ao conteúdo**. Se não for possível acessar o link, registrar a limitação e solicitar ao usuário o texto necessário; jamais afirmar que foi lida.
+3. Consultar documentação oficial do aplicativo e da distribuição, conferindo o nome do pacote e o método `apt`. Priorizar fontes oficiais sobre respostas de IA.
+4. Identificar versões, comandos, dependências, opções de instalação, remoção e verificação, distinguindo fatos confirmados de hipóteses.
+5. Não fazer novas consultas ao ChatGPT por conta própria se não houver acesso; não inventar URLs de conversas. Utilizar a URL fornecida como referência somente com indicação honesta do nível de verificação.
+
+## 3. Inspeção e proteção do projeto
+
+- Antes de qualquer alteração, consultar `pwd`, `git status --short`, `git branch --show-current`, `git remote -v`, `git submodule status` e a árvore dos arquivos relevantes.
+- Não sobrescrever alterações preexistentes, conteúdo autoral, dados de usuário ou arquivos não relacionados. Não realizar `git reset --hard`, `git clean -fd`, `push --force` ou exclusões indiscriminadas.
+- Trabalhar na `main`, sem descartar trabalho existente. Se a troca de branch não for segura, parar e informar o impedimento.
+- Não substituir indiscriminadamente nomes em caminhos, URLs, referências, comandos ou citações. Adaptar nomes do aplicativo somente onde semanticamente correto. No texto descritivo, retirar underscores do nome do projeto quando apropriado; preservar identificadores literais.
+- Preservar estrutura e contexto do notebook-modelo; não copiar instruções de instalação de `shell scripts` como se fossem instruções de instalação do `subfinder`.
+- Verificar `CHANGES.txt` e `setup.py`, alterando-os somente se houver necessidade comprovada e sem falsear histórico, versões ou metadados.
+- Fazer busca por referências residuais no repositório principal (nomes de aplicativos anteriores, URLs, títulos e exemplos), incluindo, quando existentes, `pyproject.toml`, `CITATION.cff`, `MANIFEST.in`, `requirements.txt`, `DEPENDENCIES.md` e `__init__.py`. Excluir da edição automática submódulos de terceiros, templates genéricos, dependências vendorizadas e histórico Git; registrar ocorrências legítimas não alteradas.
+
+## 4. Git, GitHub e preparação do repositório
+
+Executar operações de preparação **somente se necessárias**, verificando antes se já foram concluídas ou se há processo ainda em execução. Não iniciar uma segunda execução simultânea de `prepare_repo.sh`. Não usar `sleep 10` como prova de conclusão; acompanhar PID, status de saída e efeitos esperados.
+
+1. Se não for repositório Git, inicializar com `git init -b main` (ou equivalente compatível).
+2. Se existir repositório Git em outra branch, verificar o estado antes de mudar para `main`.
+3. Verificar autenticação e existência do repositório remoto com `gh auth status` e `gh repo view edftechnology/subfinder`. Distinguir repositório inexistente de falha de autenticação ou rede.
+4. Se comprovadamente inexistente e autorizado no ambiente, criar com `gh repo create edftechnology/subfinder --private`. Nunca criar repositório duplicado.
+5. Se `origin` não existir, configurar `git remote add origin git@github.com:edftechnology/subfinder.git`. Se existir, inspecionar; não sobrescrever silenciosamente.
+6. Verificar se o submódulo `subs/submodules/shell_scripts` já existe, seu registro em `.gitmodules` e seu estado. `gitsubmoduleaddshellscripts` pode ser alias/função local: verificar com `type gitsubmoduleaddshellscripts`; não pressupor que exista. Se não existir, localizar a URL oficial do submódulo e obter confirmação antes de adicioná-lo.
+7. Antes de executar `bash subs/submodules/shell_scripts/scripts/prepare_repo.sh --profile app`, ler o script e seus efeitos, conferir se já rodou e se está ativo, e verificar pré-condições. Não executar automaticamente ações destrutivas ou que exijam credenciais.
+8. Não considerar a linha `Cloning into ...` como comando: trata-se de saída de terminal e pode se referir a outro projeto.
+9. Não efetuar commit/push sem verificar diff, escopo, branch, credenciais e instruções do usuário. Nunca publicar segredos ou arquivos privados por engano.
+
+## 5. Estrutura obrigatória do README.ipynb
+
+O `README.ipynb` é a **fonte canônica**. Preservar o estilo e as seções pertinentes do template existente, adaptando o conteúdo ao aplicativo. A estrutura-alvo é:
+
+1. Título `Como instalar/configurar/usar o \`subfinder\` no \`Kali Linux\``.
+2. `Resumo` e `Abstract`, se presentes no modelo, mantendo os dois idiomas.
+3. `Descrição` e funcionalidades reais do aplicativo.
+4. `Pré-requisitos`, incluindo permissões, conectividade e requisitos verificáveis.
+5. `Instalação`: procedimento detalhado, sequencial e numerado.
+6. `Código completo para configurar/instalar/usar`: subseção um nível abaixo da instalação, com instruções numeradas para abrir o terminal e executar um bloco único, equivalente aos comandos operacionais do passo a passo.
+7. `Verificação da instalação`: comandos e resultados esperados; não fabricar saídas.
+8. `Configuração e utilização`: exemplos básicos seguros e documentação das opções pertinentes.
+9. `Desinstalação`: procedimento detalhado, sequencial e numerado, com justificativas e verificações.
+10. `Código completo para desinstalar`: **subseção um nível abaixo da seção Desinstalação**, com instruções numeradas para abrir o terminal e executar um bloco único equivalente aos comandos operacionais do passo a passo.
+11. `Submódulos`, `prepare_repo.sh` e `Governança documental mínima`, quando aplicáveis ao repositório; distinguir preparação do repositório da instalação do aplicativo.
+12. `Compatibilidade`, `Licença`, `Contato e suporte` e `Referências`.
+13. `Governança documental mínima`, tabelas de versões e orientações MRM, somente quando pertinentes ao projeto.
+
+A numeração dos títulos pode ser ajustada à sequência real do template, sem duplicar números nem quebrar referências internas. Não eliminar seções existentes relevantes. Se uma seção não se aplicar, justificar antes de removê-la. Preservar células Markdown e metadados necessários do notebook.
+
+## 6. Regras rígidas de formatação e preservação
+
+- Manter o português brasileiro, pontuação e acentuação corretos. Padronizar `Linux Ubuntu` e `Kali Linux`. Usar nomes de programas, opções, comandos e caminhos em código inline. Usar itálico para estrangeirismos em prosa quando adequado, sem modificar identificadores literais.
+- Empregar verbos no infinitivo nas ações dos passos a passo (por exemplo, `Digitar`, `Pressionar`, `Verificar`). **Exceção:** preservar literalmente o item 2 e os subitens 2.1–2.8 do template, mesmo quando sua redação divergir dessa regra.
+- Quando a sintaxe do comando permitir, posicionar `-y` ao final; não alterar comandos cuja ordem de argumentos seja significativa.
+- **Preservar integralmente** o item `2. Certifique-se de que seu sistema esteja limpo e atualizado.` e seus subitens 2.1 a 2.8, com textos e comandos originais do `README.ipynb`; ele é um **item de lista**, não um cabeçalho `##` ou `###`.
+- Esse item deve permanecer depois do passo `1. Abrir o \`Terminal Emulator\`. Você pode fazer isso pressionando:` e do bloco com `Ctrl + Alt + T`.
+- `Ctrl + Alt + T` é atalho de teclado, **não** comando executável de shell; apresentá-lo como no template, mas nunca incluí-lo em blocos de execução automática.
+- Para blocos cercados por três crases dentro de um item numerado Markdown, indentar a abertura, o conteúdo e o fechamento com **quatro espaços** em relação à margem da lista, respeitando a hierarquia do item. Validar renderização no Markdown resultante.
+- Não transformar comandos de manutenção do sistema em pré-requisitos silenciosos para a execução do agente. Em especial, `sudo apt autoremove -y`, `sudo apt --fix-broken install` e `sudo apt full-upgrade -y` devem ser documentados como no template, mas **não executados automaticamente**. Explicar o impacto potencial de alterações abrangentes do sistema quando couber.
+- Não executar literalmente texto entre `<...>`: são placeholders que exigem substituição consciente.
+- O bloco completo de instalação e o de desinstalação devem reproduzir a mesma sequência de comandos operacionais das respectivas etapas individuais, sem adicionar comandos ocultos. Podem conter verificações, comentários e condicionais de segurança devidamente explicados.
+- Nas subseções de código completo, incluir: (1) abrir o terminal, mostrando `Ctrl + Alt + T` como atalho não executável; (2) instrução para copiar/colar; (3) bloco `bash` único com comandos válidos. Não incluir `Ctrl + Alt + T` dentro do bloco executável. Se a execução integral exigir intervenção humana, explicar e dividir em blocos seguros; **não** apresentar `NÃO há.` como comando de shell.
+- Manter os títulos e a hierarquia do notebook. O exemplo `## 1.1 Código completo para configurar/instalar/usar` é ilustrativo; ajustar a numeração à seção real de instalação e usar título equivalente para desinstalação.
+- Não misturar comandos de instalação do aplicativo com comandos de provisionamento Git sem identificar a finalidade.
+
+## 7. Instalação e desinstalação por apt
+
+**Instalação:** conferir previamente a existência do pacote no repositório do Kali e o comando correto de instalação. Documentar atualização de índices, instalação, verificação de versão e consulta à ajuda, quando suportadas. Se a instalação já existir, verificar o estado antes de tentar reinstalar.
+
+**Desinstalação obrigatória:** incluir:
+
+1. Verificação do pacote instalado e da origem de instalação.
+2. Explicação da diferença entre `apt remove` e `apt purge` e escolha justificada para o procedimento documentado.
+3. Comandos individuais para remover o pacote instalado pelo `apt`, sem apagar arquivos pessoais por padrão.
+4. Verificação posterior para confirmar a remoção; distinguir ausência do pacote de estado residual `rc` no `dpkg`.
+5. Tratamento opcional de dependências órfãs: apresentar `apt autoremove` como etapa separada, com inspeção prévia e alerta de que pode afetar outros pacotes. Não executar sem autorização.
+6. **Subseção `Código completo para desinstalar`**, imediatamente abaixo da seção de desinstalação e um nível inferior, com bloco `bash` único e fiel às etapas anteriores.
+7. Não prometer reversão integral de mudanças do sistema se o gerenciador de pacotes não a garantir.
+
+Os procedimentos precisam funcionar para o **método real de instalação**. Não recomendar `pip uninstall` para um pacote instalado exclusivamente via `apt`.
+
+## 8. Conversão, sincronização e arquivos gerados
+
+- Editar diretamente o `README.ipynb` como fonte canônica; **não editar manualmente** `README.md` nem `README.py` para contornar a conversão.
+- Verificar a existência de `subs/submodules/python_scripts/scripts/convert_ipynb_to_md.py`, confirmar o suporte a `--depth 0` e ler seu comportamento antes de executar:
+
+  ```bash
+  python3 subs/submodules/python_scripts/scripts/convert_ipynb_to_md.py --depth 0
+  ```
+
+- Se o conversor não existir, implementar conversão determinística do conteúdo Markdown do notebook para `README.md`, preservando títulos, listas, blocos de código, links e acentos; não inventar células nem alterar o notebook desnecessariamente.
+- Se `README.py` existir e for comprovadamente artefato indevido, remover somente após verificar que não contém trabalho autoral necessário e que não é utilizado por outros arquivos. Caso contrário, registrar o conflito.
+- Conferir validade JSON do `.ipynb`, estrutura das células e renderização do Markdown convertido. Reexecutar a conversão para verificar que o resultado é estável (sem diferenças inesperadas).
+
+## 9. Referências e rastreabilidade
+
+- Priorizar documentação oficial, manuais de pacote e documentação da distribuição; registrar URLs verificadas e data real de acesso.
+- Incluir a conversa fornecida pelo usuário na seção `Referências`, sem afirmar que seu conteúdo foi consultado se o acesso falhar.
+- Seguir apresentação de referências no padrão solicitado, inspirada na ABNT: autores/instituições em CAIXA ALTA, título em negrito e apenas a primeira letra do título em maiúscula, salvo nomes próprios e identificadores literais. Apresentar autoria, título, disponibilidade, fonte e data de acesso em linhas separadas, mantendo a legibilidade no notebook e no Markdown.
+- Exemplo de **formato**, não de fonte automaticamente consultada:
+
+  ```text
+  [1] OPENAI.
+  **Instalar o `subfinder` no `kali linux` pelo `terminal emulator`**.
+  Disponível em: <URL_VERIFICADA>.
+  ChatGPT.
+  Acessado em: DD/MM/AAAA.
+  ```
+
+- Não inventar datas, autores, versões ou títulos de páginas. Evitar referências duplicadas. Se necessário, registrar que a formatação editorial solicitada é uma adaptação e não uma garantia de conformidade integral com a NBR 6023.
+
+## 10. Padronização de código, arquivos e nomenclatura
+
+- Nomes de novos arquivos em inglês, com `_` entre palavras. Preservar nomes convencionais obrigatórios como `AGENTS.md`, `README.md`, `GEMINI.md`, `LICENSE` e nomes existentes exigidos por ferramentas; não renomear arquivos públicos ou importáveis sem análise de impacto.
+- Código Python criado ou modificado deve seguir PEP 8 e PEP 257, começar com `# -*- coding: utf-8 -*-` quando for arquivo-fonte Python, ter comentários e docstrings em português brasileiro, identificadores em inglês e linhas com até 100 colunas. Não aplicar essas regras indiscriminadamente a Markdown, JSON ou shell.
+- Não introduzir exemplos tecnicamente inválidos: verificar flags, versões, redirecionamentos de shell, caminhos e nomes reais de pacotes antes de incluí-los.
+- Quando houver tabelas de versões, usar colunas `Componente`, `Versão/Comando` e `Observação`, com versões efetivamente verificadas.
+
+## 11. Governança documental e MRM
+
+- Somente para modelos, automações analíticas, dados críticos ou sistemas regulados, incluir seção sucinta de governança documental no `README.ipynb`, sem transformá-lo em relatório metodológico completo.
+- Quando aplicável, registrar objetivo e uso previsto, escopo, responsáveis, ambiente e versões, fontes de dados, premissas, limitações, testes, resultados, monitoramento, riscos operacionais, contingência, histórico de revisão e referências metodológicas.
+- Referenciar, quando existirem, documentos próprios de metodologia, extração, execução, monitoramento, validação e aprovações, sem inventá-los.
+- Distinguir instalação técnica de validação, aprovação ou conformidade regulatória. Não declarar MRM obrigatório sem base aplicável. Para `subfinder`, omitir se não houver contexto que justifique.
+
+## 12. Sincronização, commits e publicação
+
+- Depois de validar notebook, Markdown e demais alterações, conferir `git diff --check`, `git diff`, `git status --short`, branch e remoto.
+- Antes de integrar alterações remotas, usar `git fetch origin` e examinar divergências. Não executar `git pull` indiscriminadamente quando houver alterações locais ou conflitos; integrar somente com estratégia segura e explícita.
+- Preparar para commit apenas arquivos pertinentes à tarefa, por caminhos explícitos; não usar `git add .` sem inspeção. Revisar o conteúdo preparado e garantir ausência de segredos.
+- Quando houver autorização para publicar e credenciais disponíveis, criar commit descritivo na `main` e enviar para `origin main`. Não inventar sucesso nem forçar push.
+- Se um submódulo próprio tiver sido modificado, revisar e publicar primeiro seu commit na `main` do submódulo, verificar o novo ponteiro e somente então registrar/publicar a atualização no repositório principal. Não modificar ou publicar submódulos de terceiros sem autorização.
+- Se a publicação estiver bloqueada por autenticação, divergência, política ou ausência de autorização, manter o trabalho local íntegro e informar o impedimento.
+
+## 13. Critérios de aceitação e relatório final
+
+Antes de concluir:
+
+- [ ] Aplicativo `subfinder`, distribuição, pacote e método de instalação conferidos.
+- [ ] Nenhuma referência residual indevida a `dnsrecon` em comandos, títulos ou remotos.
+- [ ] Conteúdo da conversa de referência acessado ou limitação explicitada.
+- [ ] Template `README.ipynb` inspecionado integralmente e preservado.
+- [ ] Item 2 e subitens 2.1–2.8 preservados como lista numerada.
+- [ ] Blocos de código, indentação Markdown e verbos no infinitivo conferidos.
+- [ ] Instalação detalhada e bloco completo coerentes, com instruções para uso do terminal.
+- [ ] Desinstalação detalhada e bloco completo coerentes, com instruções para uso do terminal.
+- [ ] Verificações de instalação/remoção documentadas sem resultados fictícios.
+- [ ] Conversão para `README.md` validada, sem edição manual divergente.
+- [ ] `README.py`, `CHANGES.txt`, `setup.py`, metadados, licença e demais arquivos revisados conforme aplicabilidade.
+- [ ] Repositório, branch, remoto, submódulos e scripts verificados sem duplicação.
+- [ ] Referências formatadas em linhas separadas, com fontes e datas reais.
+- [ ] Governança documental e MRM avaliados quanto à aplicabilidade.
+- [ ] `git diff --check`, `git diff` e `git status --short` revisados.
+- [ ] Commits e publicação realizados apenas quando autorizados, ou impedimentos relatados.
+
+Ao final, relatar: arquivos alterados, decisões tomadas, fontes verificadas, comandos realmente executados, testes e resultados, comandos **não** executados, pendências e limitações. Não declarar sucesso total se algum critério não foi atendido.i
