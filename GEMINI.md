@@ -1,5 +1,10 @@
 # GEMINI - Guia Mestre
 
+## Qualidade científica
+
+Priorize qualidade, rigor científico, reprodutibilidade e auditabilidade; não produtividade ou velocidade de implementação.
+
+
 Este arquivo serve como índice central para as instruções específicas do Gemini.  
 Cada arquivo dedicado **não é mesclado** aqui, para permitir edição independente.
 
